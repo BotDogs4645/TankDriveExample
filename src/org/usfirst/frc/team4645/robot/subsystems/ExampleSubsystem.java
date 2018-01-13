@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class ExampleSubsystem extends Subsystem 
 {
-	
+	//declares motors and joysticks
 	public static TalonSRX motorFL = new TalonSRX(1);
 	public static TalonSRX motorFR = new TalonSRX(2);
 	public static TalonSRX motorBR = new TalonSRX(3);
@@ -26,12 +26,15 @@ public class ExampleSubsystem extends Subsystem
 	Joystick joy1 = new Joystick(1) ; 
 	Joystick joy2 = new Joystick(2) ;
 	
+	//This is a default command that is scheduled whenever the subsystem is idle
 	public void initDefaultCommand() 
 	{
 		
 		setDefaultCommand(new ExampleCommand());
 	}
 	
+	//gets current Y values of the joysticks and sets motor speed accordingly
+	//joy1 controls all left motors while joy2 controls all right motors
 	public void driveMethod()
 	{
 	motorFL.set(joy1.getY());
@@ -41,6 +44,7 @@ public class ExampleSubsystem extends Subsystem
 	motorBR.set(joy2.getY());
 	
 	}
+	
 	
 	public void stopMethod()
 	{
