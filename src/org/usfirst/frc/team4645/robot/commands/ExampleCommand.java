@@ -8,6 +8,7 @@ import org.usfirst.frc.team4645.robot.Robot;
  *
  */
 public class ExampleCommand extends Command {
+	//default constructor
 	public ExampleCommand() {
 		// Use requires() here to declare subsystem dependencies
 		requires(Robot.exampleSubsystem);
@@ -23,7 +24,7 @@ public class ExampleCommand extends Command {
 	@Override
 	protected void execute() 
 	{
-		Robot.exampleSubsystem.driveMethod();
+		Robot.exampleSubsystem.driveMethod();//executes the drive method from exampleSubsystem
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
